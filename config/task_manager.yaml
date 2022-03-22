@@ -1,0 +1,11 @@
+behavior_tree_plugins:
+  - is_battery_low_condition_bt_node
+  - pipeline_sequence_bt_node
+  - round_robin_node_bt_node
+  - print_value_bt_node
+  - add_two_int_bt_node
+  - always_running_bt_node
+
+# bebavior tree monitoring option
+enable_groot_monitoring: true
+enable_behavior_tree_log: false

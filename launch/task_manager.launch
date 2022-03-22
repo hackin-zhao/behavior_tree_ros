@@ -1,0 +1,6 @@
+<launch>
+  <node name="behavior_tree_ros" pkg="behavior_tree_ros" type="behavior_tree_ros_node" output="screen">
+    <rosparam file="$(find behavior_tree_ros)/config/behavior_tree_ros.yaml" command="load"/>
+    <param name="behavior_tree_xml_filename" value="$(find behavior_tree_ros)/behavior_tree/simple_demo.xml"/>
+  </node>
+</launch>

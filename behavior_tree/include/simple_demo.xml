@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!-- simple_demo for study -->
+<root main_tree_to_execute = "simple_demo">
+    <BehaviorTree ID="simple_demo">
+        <Sequence name="auto_supply_sequence">
+            <AddTwoInts first_int = "3" second_int = "4" sum = "{add_two_result}" />
+            <PrintValue message="{add_two_result}"/>
+            <RetryUntilSuccesful num_attempts="4">
+                <Timeout msec="300">
+                    <Fibonacci order="5" result="{fibonacci_result}" />
+                </Timeout>
+            </RetryUntilSuccesful>
+            <PrintValue message="{fibonacci_result}"/>
+        </Sequence>
+    </BehaviorTree>
+</root>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+  For instructions on using Groot and description of the following BehaviorTree nodes.
+-->
+<root>
+    <TreeNodesModel>
+
+        <!-- ############################### ACTION NODES ############################### -->
+        <Action ID="AddTwoInts">
+            <input_port name="first_int">Distance to backup</input_port>
+            <input_port name="second_int">Speed at which to backup</input_port>
+            <output_port name="sum">Speed at which to backup</output_port>
+        </Action>
+
+        <Action ID="Fibonacci">
+            <input_port name="order">order</input_port>
+            <output_port name="result">result</output_port>
+        </Action>
+
+        <Action ID="PrintValue">
+            <input_port name="message">int value to print</input_port>
+        </Action>
+
+        <Action ID="AlwaysRunning"/>
+
+        <Action ID="MoveBaseAction">
+            <input_port name="message">int value to print</input_port>
+        </Action>
+
+        <!-- ############################### CONDITION NODES ############################### -->
+        <Condition ID="IsBatteryLow">
+        <input_port name="min_battery">Min battery % or voltage before triggering</input_port>
+        <input_port name="battery_topic">Topic for battery info</input_port>
+        <input_port name="is_voltage">Bool if check based on voltage or total %</input_port>
+        </Condition>
+
+        <!-- ############################### CONTROL NODES ############################### -->
+        <Control ID="PipelineSequence"/>
+
+        <Control ID="RecoveryNode">
+            <input_port name="number_of_retries">Number of retries</input_port>
+        </Control>
+
+        <Control ID="RoundRobin"/>
+
+        <!-- ############################### DECORATOR NODES ############################### -->
+        <Decorator ID="GoalUpdater">
+            <input_port name="input_goal">Original goal in</input_port>
+            <output_port name="output_goal">Output goal set by subscription</output_port>
+        </Decorator>
+
+    </TreeNodesModel>
+</root>

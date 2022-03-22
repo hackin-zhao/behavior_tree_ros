@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<root main_tree_to_execute="MainTree">
+
+    <include ros_pkg="behavior_tree_ros" path="behavior_tree/include/simple_demo.xml"/>
+
+    <BehaviorTree ID="MainTree">
+
+        <Sequence>
+            <SubTree ID="simple_demo" __shared_blackboard="true"/>
+        </Sequence>
+
+    </BehaviorTree>
+</root>
